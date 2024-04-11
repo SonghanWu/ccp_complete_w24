@@ -1,0 +1,345 @@
+/* covered by the new background-color */
+/* body {
+    background-color: hsla(240, 100%, 97%, 0.5);
+} */
+
+.intro {
+    background-color: hsla(240, 100%, 95%, 0.5);
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.nav-list {
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    text-align: center;
+    background: #f0f0f0;
+    border: 2px solid #0294A5;
+}
+
+nav a {
+    color: #000;
+    text-decoration: none;
+}
+
+.nav-link.active {
+    color: #004785;
+    font-weight: bold;
+    /* border-bottom: 1px solid #ADD8E6; */
+    background-color: #FFF0F5;
+    font-size: 1.1em;
+    /* padding-bottom: 1px; */
+}
+
+nav a:hover {
+    color: #3C763D;
+    /* border-bottom: 0.5px dashed #90EE90; */
+    background-color: #e0f7fa;
+    font-size: 1.05em;
+    /* padding-bottom: 0.5px; */
+}
+
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 5px;
+    background: #0294A5;
+    color: white;
+    padding: 8px;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 10px;
+}
+
+ul {
+    margin: 0 auto;
+    width: fit-content;
+    font-size: 20px;
+}
+
+.photo-gallery {
+    display: grid;
+    /* I intentionally left the comment for the line below to make the layout in mobile view different, 
+       which can also help people see the pictures in small viewport devices more clearly. */
+    /* grid-template-columns: repeat(3, 1fr); */
+    gap: 5px;
+    padding: 5px;
+    justify-content: center;
+
+    /* width: 100% !important;
+    height: auto !important; */
+}
+
+.photo-gallery_ani, .photo-gallery_recp {
+    gap: 40px;
+    padding: 20px;
+}
+
+.photo-gallery video, .photo-gallery img {
+    width: 100%;
+    height: auto;
+    border: 2px solid #000;
+    padding: 5px;
+}
+
+.cute-text {
+    font-family: 'Comic Sans MS', sans-serif;
+    color: #a52a99;
+    text-shadow: 1px 1px 2px #E0FFFF;
+}
+
+figcaption { /* for photos */
+    color: #777;
+    font-size: 1em;
+    text-align: center;
+}
+
+.figcaption { /* for videos */
+    color: #777;
+    font-size: 1em;
+    text-align: center;
+}
+
+/* funny enough, the four chunks of code below are only for the travel page and the last two are only for YSNP */
+.mainpic {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+}
+
+.mainpic img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.video-gallery {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+}
+
+.video-gallery video {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.animal-list {
+    text-align: left;
+    list-style-type: disc;
+    margin: 0;
+    /* list-style-position: inside; */
+    font-size: 20px;
+}
+
+.intro-photo img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 5px solid gold;
+}
+
+.food-intro {
+    text-align: center;
+    font-weight: 600;
+}
+
+.row:nth-child(odd) {
+    background-color: #fff;
+}
+  
+.row:nth-child(even) {
+    background-color: #FFCCCC;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+}
+
+/* this is for the javascript task */
+.shake_small {
+    animation: shake_small 0.5s ease-in-out infinite alternate;
+}
+
+.shake_big {
+    animation: shake_big 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes shake_small {
+    0% { transform: rotate(-1deg); }
+    100% { transform: rotate(1deg); }
+}
+  
+@keyframes shake_big {
+    0% { transform: rotate(-3deg); }
+    100% { transform: rotate(3deg); }
+}
+
+
+
+@media (prefers-reduced-motion: reduce) {
+    img[src*=".gif"] {
+        animation: none;
+        transition: none;
+    }
+}
+
+
+@media screen and (min-width: 500px) {
+    /* the four chunks of code below are still only for the travel page's YSNP */
+    #img1 {
+        grid-column: 1;
+        grid-row: 1 / span 3;
+    }
+
+    #img2 {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+    }
+
+    #img3 {
+        grid-column: 3;
+        grid-row: 1 / span 2;
+    }
+
+    #img4 {
+        grid-column: 2 / span 2;
+        grid-row: 3;
+    }
+
+    .photo-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        /* good for the travel page but comment it out to avoid influencing the pets and recipes pages */
+        /* gap: 0px; */
+    }
+
+    .photo-gallery_special {
+        /* display: grid; */
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, auto);
+        /* gap: 0px; */
+        padding: 0px;
+    }
+
+    figcaption {
+        font-size: 0.8em;
+    }
+
+    .figcaption {
+        font-size: 0.8em;
+    }
+
+    /* .skip-link {
+        top: 5px;
+        left: auto;
+        right: 0;
+    } */
+
+    .main-content {
+        flex-direction: row;
+        flex-wrap: wrap; /* still choose wrap here bc the tablet viewport is still too small */
+    }
+
+    main {
+        margin-left: 100px;
+    }
+
+    .nav-list {
+        display: block;
+        text-align: center;
+        top: 50%;
+        left: 54px;
+        transform: translate(-50%, -55%); /* Centers the nav list */
+        position: fixed;
+        width: 100px;
+        height: 180px;
+        /* overflow-y: auto; */
+    }
+
+    .nav-list > li {
+        margin-bottom: 20px;
+    }
+
+    .mainpic {
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+
+    .video-gallery {
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+}
+
+
+@media screen and (min-width: 800px) {
+	.nav-list {
+        /* make it the same back to phone view */
+        display: block;
+        padding: 0px;
+        width: 100%;
+        text-align: center;
+
+        /* make all the changes in tablet view disappear */
+        top: auto;
+        left: auto;
+        transform: none;
+        position: static;
+        height: auto;
+        /* background-color: hsla(240, 100%, 97%, 0.5); */
+    }
+
+    .nav-list > li {
+        margin-bottom: 0px;
+    }
+
+    main {
+        margin-left: 0px;
+    }
+
+    .photo-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .main-content > div:first-child {
+        flex: 2;
+    }
+    
+    .main-content > div:last-child {
+        flex: 3;
+    }
+}
+
+
+@media screen and (min-width: 1200px) {
+    p {
+        font-size: 20px;
+    }
+
+    figcaption {
+        font-size: 1.2em;
+    }
+
+    .figcaption {
+        font-size: 1.2em;
+    }
+}
