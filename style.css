@@ -53,7 +53,7 @@ nav a:hover {
     top: -40px;
     left: 5px;
     background: #0294A5;
-    color: white;
+    color: black; /* I think this makes even lower color contrast but it simply works */
     padding: 8px;
     z-index: 100;
 }
